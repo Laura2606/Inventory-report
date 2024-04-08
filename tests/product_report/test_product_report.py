@@ -20,7 +20,7 @@ def test_product_report() -> None:
         storage_instructions=storage_instructions,
     )
 
-    expected_report = (
+    expected_reported_phrase = (
         f"The product {id} - {product_name} "
         f"with serial number {serial_number} "
         f"manufactured on {manufacturing_date} "
@@ -29,4 +29,4 @@ def test_product_report() -> None:
         f"must be stored according to the following instructions: "
         f"{storage_instructions}."
     )
-    assert str(product) == expected_report
+    assert str(product) == expected_reported_phrase
