@@ -1,9 +1,9 @@
 from inventory_report.product import Product
-from typing import List
+from typing import List, Optional
 
 
 class Inventory:
-    def __init__(self, data: List[Product] = None) -> None:
+    def __init__(self, data: Optional[List[Product]] = None) -> None:
         self._data = data if data is not None else []
 
     @property
