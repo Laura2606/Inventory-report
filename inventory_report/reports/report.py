@@ -8,3 +8,6 @@ class Report(Protocol):
 
     def generate(self) -> str:
         pass
+
+
+# Req 6
