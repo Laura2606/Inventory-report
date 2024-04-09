@@ -69,3 +69,23 @@ def test_json_importer_extends_importer() -> None:
 @pytest.mark.dependency
 def test_csv_importer_extends_importer() -> None:
     assert issubclass(CsvImporter, Importer)
+
+
+json_file_path = "inventory_report/data/inventory.json"
+
+json_importer = JsonImporter(json_file_path)
+
+products = json_importer.import_data()
+
+for product in products:
+    print(
+        f"  Product(\n"
+        f"    id='{product.id}',\n"
+        f"    product_name='{product.product_name}',\n"
+        f"    company_name='{product.company_name}',\n"
+        f"    manufacturing_date='{product.manufacturing_date}',\n"
+        f"    expiration_date='{product.expiration_date}',\n"
+        f"    serial_number='{product.serial_number}',\n"
+        f"    storage_instructions='{product.storage_instructions}'\n"
+        f"  ),"
+    )
